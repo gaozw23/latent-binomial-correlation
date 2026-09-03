@@ -1,0 +1,24 @@
+MASTER_SEEDS <- c(
+  core_unit_tests = 20260901L,
+  pairwise = 20260903L,
+  interval_bootstrap = 20260904L,
+  matrix = 20260905L,
+  aec_bootstrap = 20260906L,
+  aec_thinning = 20260907L,
+  rmse_mcse = 20260908L
+)
+
+INTEGER_TOL <- 1e-12
+SYMMETRY_TOL <- 1e-10
+PSD_TOL <- 1e-10
+PROJECTION_LOSS_TOL <- 1e-10
+ROUND_OFF_SNAP_TOL <- 10 * .Machine$double.eps
+
+PAIRWISE_N_VALUES <- c(50L, 100L, 250L, 500L)
+MATRIX_N_VALUES <- c(50L, 100L, 250L)
+PAIRWISE_PILOT_REPLICATES <- 200L
+PAIRWISE_FULL_REPLICATES <- 5000L
+MATRIX_PILOT_REPLICATES <- 500L
+MATRIX_FULL_REPLICATES <- 5000L
+
+TABLE_DIGITS <- list(correlation = 3L, coverage = 3L, error = 4L)

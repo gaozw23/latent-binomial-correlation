@@ -1,0 +1,7 @@
+scenario_id,latent_sign,a,b,delta,denominator_id,description
+S1,positive,2,5,0.60,D1,standard positive with moderate non-informative denominators
+S2,positive,2,5,0.60,D2,standard positive with low imbalanced denominators
+S3,positive,2,5,0.60,D3,standard positive with informative correlated denominators
+S4,negative,2,5,0.60,D3,negative with informative correlated denominators
+S5,positive,2,5,1.00,D3,null correlation with informative correlated denominators
+S6,positive,0.5,5,0.35,D2,boundary-heavy positive probabilities with low imbalanced denominators
