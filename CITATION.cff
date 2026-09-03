@@ -4,6 +4,8 @@ title: "Latent covariance and correlation from multivariate binomial counts with
 type: software
 version: 1.0.0
 date-released: 2026-09-03
+repository-code: "https://github.com/gaozw23/latent-binomial-correlation"
+url: "https://github.com/gaozw23/latent-binomial-correlation/releases/tag/v1.0.0"
 authors:
   - family-names: Gao
     given-names: Zhuowei
@@ -15,4 +17,3 @@ keywords:
   - binomial measurement error
   - latent covariance
   - U-statistics
-

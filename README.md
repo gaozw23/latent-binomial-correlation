@@ -3,6 +3,8 @@
 Reproducible R code for the manuscript **“Latent covariance and correlation
 from multivariate binomial counts with informative denominators”**.
 
+Repository: <https://github.com/gaozw23/latent-binomial-correlation>
+
 Manuscript prepared for submission to the *Australian & New Zealand Journal
 of Statistics*. The manuscript is not accepted or published.
 
