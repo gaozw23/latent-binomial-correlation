@@ -170,7 +170,7 @@ audit_aec_matching_feasibility <- function(audit) {
     rbind(
       .aec_anomaly_row(NA_integer_, state, "matching_feasibility", "exact_id_coordinate_over_5km",
                        state_feasibility$exact_id_over_5km[i],
-                       "Exact-ID candidate retained only for manual audit; not accepted in Phase 5A.",
+                       "Exact-ID candidate retained only for manual audit; not included automatically.",
                        if (state_feasibility$exact_id_over_5km[i] > 0) "REVIEW" else "PASS"),
       .aec_anomaly_row(NA_integer_, state, "matching_feasibility", "secondary_coordinate_over_2km",
                        state_feasibility$secondary_coordinate_fail_2km[i],

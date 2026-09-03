@@ -37,14 +37,6 @@ source_project_r <- function(envir = parent.frame()) {
   invisible(lapply(files, sys.source, envir = envir))
 }
 
-phase_guard <- function(required_phase, action) {
-  stop(
-    sprintf("%s requires Phase %s authorization; current authorization stops after Phase 1",
-            action, required_phase),
-    call. = FALSE
-  )
-}
-
 sha256_files <- function(paths) {
   if (!requireNamespace("digest", quietly = TRUE)) {
     stop("Package 'digest' is required for SHA-256 manifests", call. = FALSE)

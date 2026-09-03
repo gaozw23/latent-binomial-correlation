@@ -298,7 +298,7 @@ audit_aec_inventory <- function(inventory) {
     anomaly[[z]] <- .aec_anomaly_row(
       year, jurisdiction, "denominator_structural_audit",
       "ordinary_formal_denominator_below_2", length(low),
-      "Explicitly listed in aec_denominator_low_groups.csv; exclude before any Phase 5B analysis.",
+      "Explicitly listed in aec_denominator_low_groups.csv; exclude before analysis.",
       if (length(low)) "REVIEW" else "PASS"
     )
   }

@@ -21,7 +21,7 @@ open_phase3_cluster <- function(workers) {
   })
   if (!all(unlist(setup))) {
     parallel::stopCluster(cluster)
-    stop("Phase 3 worker initialization failed", call. = FALSE)
+    stop("Pairwise-simulation worker initialisation failed", call. = FALSE)
   }
   cluster
 }

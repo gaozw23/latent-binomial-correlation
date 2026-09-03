@@ -8,5 +8,5 @@ manifest <- generate_phase3_stream_files()
 dir.create("results/manifests", recursive = TRUE, showWarnings = FALSE)
 write.csv(manifest, "results/manifests/phase3_rng_stream_manifest.csv", row.names = FALSE, quote = TRUE)
 print(manifest)
-cat("Phase 3 RNG stream generation completed in",
+cat("Pairwise-simulation RNG stream generation completed in",
     as.numeric(difftime(Sys.time(), start, units = "secs")), "seconds\n")

@@ -16,7 +16,7 @@ dir.create("results/summaries", recursive = TRUE, showWarnings = FALSE)
 
 data <- read_frozen_aec("results/derived/aec_matched_frozen_with_divisions.csv")
 if (nrow(data) != 6874L || anyNA(data$DivisionID_2019) || anyNA(data$DivisionID_2022)) {
-  stop("The Phase 5C enriched derivative is incomplete", call. = FALSE)
+  stop("The division-enriched data are incomplete", call. = FALSE)
 }
 structure <- audit_aec_division_structure(data)
 if (isTRUE(structure$summary$all_division_ids_identical)) years <- 2019L
@@ -56,10 +56,10 @@ for (year in years) {
     tasks, data, cluster_indices, checkpoint_path, final_path,
     cluster = cluster, checkpoint_every = 250L
   )
-  if (!result$complete) stop("Phase 5C bootstrap did not complete for ", year, call. = FALSE)
+  if (!result$complete) stop("Division-cluster bootstrap did not complete for ", year, call. = FALSE)
   if (nrow(result$results) != replicates || anyDuplicated(result$results$replicate) ||
       !identical(result$results$replicate, seq_len(replicates))) {
-    stop("Phase 5C bootstrap replicate identities are incomplete for ", year, call. = FALSE)
+    stop("Division-cluster bootstrap replicate identities are incomplete for ", year, call. = FALSE)
   }
   summaries[[as.character(year)]] <- summarise_aec_division_bootstrap(
     result$results, data, year, workers, master_seed

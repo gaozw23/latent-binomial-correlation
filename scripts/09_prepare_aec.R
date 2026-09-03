@@ -38,6 +38,6 @@ write.csv(matching$distance_distribution,
 write.csv(matching$near_threshold, "results/audits/aec_secondary_near_2km.csv",
           row.names = FALSE, quote = TRUE)
 
-cat("AEC Phase 5A schema and matching-feasibility audit complete\n")
+cat("AEC schema and matching-feasibility audit complete\n")
 print(audit$metadata_summary)
 print(matching$feasibility[matching$feasibility$state_ab == "NATIONAL", ])

@@ -46,11 +46,6 @@ bootstrap$summary$analytic_ci_upper <- primary$summary$analytic_ci_upper
 saveRDS(bootstrap$replicates, "results/raw/aec_state_bootstrap.rds", compress = "xz")
 write.csv(bootstrap$summary, "results/summaries/aec_state_bootstrap.csv", row.names = FALSE, quote = TRUE)
 
-pairwise <- readRDS("results/raw/pairwise_full_all.rds")
-phase3_diagnostic <- phase3_fisher_se_tail_diagnostic(pairwise)
-write.csv(phase3_diagnostic, "results/audits/phase3_fisher_se_tail_diagnostic.csv",
-          row.names = FALSE, quote = TRUE)
-
 metadata <- list(
   started_utc = format(start_time, tz = "UTC", usetz = TRUE),
   ended_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),

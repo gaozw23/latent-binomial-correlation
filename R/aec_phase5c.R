@@ -14,13 +14,13 @@ create_aec_division_enrichment <- function(
     output_path = "results/derived/aec_matched_frozen_with_divisions.csv",
     provenance_path = "results/audits/aec_division_enrichment_provenance.csv") {
   if (file.exists(output_path) || file.exists(provenance_path)) {
-    stop("Refusing to overwrite an existing Phase 5C enrichment artifact", call. = FALSE)
+    stop("Refusing to overwrite an existing division-enrichment output", call. = FALSE)
   }
   frozen <- read.csv(frozen_path, stringsAsFactors = FALSE, check.names = FALSE,
                      colClasses = "character", na.strings = NULL)
   missing <- setdiff(.phase5c_required_frozen_columns, names(frozen))
   if (length(missing) || nrow(frozen) != 6874L || anyDuplicated(frozen$match_id)) {
-    stop("The canonical Phase 5B frozen cohort failed its structural precheck", call. = FALSE)
+    stop("The frozen matched cohort failed its structural precheck", call. = FALSE)
   }
 
   inventory <- parse_aec_inventory("results/manifests/aec_acquisition_manifest.csv")
@@ -107,7 +107,7 @@ create_aec_division_enrichment <- function(
       !identical(enriched[names(frozen)], frozen) ||
       !identical(enriched$match_id, frozen$match_id) || anyDuplicated(enriched$match_id) ||
       any(!nzchar(enriched$DivisionID_2019)) || any(!nzchar(enriched$DivisionID_2022))) {
-    stop("Written Phase 5C enrichment failed post-write validation", call. = FALSE)
+    stop("Written division-enrichment output failed post-write validation", call. = FALSE)
   }
   derivative_sha256 <- sha256_file(output_path)
   provenance <- do.call(rbind, provenance)
